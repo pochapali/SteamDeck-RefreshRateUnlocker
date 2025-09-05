@@ -14,7 +14,7 @@ gamescope_orig=$PWD/gamescope/3.7.13/gamescope-3.7.13-orig
 gamescope_unlocked=$PWD/gamescope/3.7.13/gamescope-3.7.13-unlocked
 steamos_version=$(cat /etc/os-release | grep -i version_id | cut -d "=" -f2)
 gamescope_orig_md5sum=e1562e4211f9527caaf8eb4b12662eba
-gamescope_unlocked_md5sum=267f909e893fb864ba42736e60a41325
+gamescope_unlocked_md5sum=749e23c2bf3673e8c3377466a170bcd0
 actual_gamescope_orig_md5sum=$(md5sum $PWD/gamescope/3.7.13/gamescope-3.7.13-orig | cut -d " " -f1)
 actual_gamescope_unlocked_md5sum=$(md5sum $PWD/gamescope/3.7.13/gamescope-3.7.13-unlocked | cut -d " " -f1)
 
