@@ -10,13 +10,13 @@ sleep 2
 
 # define variables here
 steamdeck_model=$(cat /sys/class/dmi/id/board_name | tr '[:upper:]' '[:lower:]')
-gamescope_orig=$PWD/gamescope/3.6.20/gamescope-3.6.20-orig
-gamescope_unlocked=$PWD/gamescope/3.6.20/gamescope-3.6.20-unlocked
+gamescope_orig=$PWD/gamescope/3.7.13/gamescope-3.7.13-orig
+gamescope_unlocked=$PWD/gamescope/3.7.13/gamescope-3.7.13-unlocked
 steamos_version=$(cat /etc/os-release | grep -i version_id | cut -d "=" -f2)
-gamescope_orig_md5sum=c522838a242fabe519958903253a2a4c
-gamescope_unlocked_md5sum=641af753637c710f72748d4ec7fb655b
-actual_gamescope_orig_md5sum=$(md5sum $PWD/gamescope/3.6.20/gamescope-3.6.20-orig | cut -d " " -f1)
-actual_gamescope_unlocked_md5sum=$(md5sum $PWD/gamescope/3.6.20/gamescope-3.6.20-unlocked | cut -d " " -f1)
+gamescope_orig_md5sum=e1562e4211f9527caaf8eb4b12662eba
+gamescope_unlocked_md5sum=74679cabb401b047c111e7a887e9ee08
+actual_gamescope_orig_md5sum=$(md5sum $PWD/gamescope/3.7.13/gamescope-3.7.13-orig | cut -d " " -f1)
+actual_gamescope_unlocked_md5sum=$(md5sum $PWD/gamescope/3.7.13/gamescope-3.7.13-unlocked | cut -d " " -f1)
 
 # sanity check - make sure this is on LCD model
 if [ $steamdeck_model = "jupiter" ]
@@ -39,13 +39,13 @@ else
 	exit
 fi
 
-# sanity check - make sure this is running on SteamOS 3.6.20
-if [ $steamos_version = 3.6.20 ]
+# sanity check - make sure this is running on SteamOS 3.7.13
+if [ $steamos_version = 3.7.13 ]
 then
 	echo Script is running on supported SteamOS - $steamos_version.
 else
 	echo SteamOS - $steamos_version detected. This is NOT a supported version of this script!
-	echo Make sure the SteamOS version is at 3.6.20 and run the script again.
+	echo Make sure the SteamOS version is at 3.7.13 and run the script again.
 fi
 
 # sanity check - perform md5sum hash check
